@@ -41,16 +41,16 @@ class PaypalGateway extends BaseController implements PaywayInterface
         $source = null,
         $currency = null
     ) {
-        $this->setVariablesInGlobal(
-            $user_id,
-            $user_first_name,
-            $user_last_name,
-            $user_email,
-            $user_phone,
-            $source,
-            $currency,
-            $amount
-        );
+        $this->setVariablesInGlobal([
+            "user_id" => $user_id,
+            "user_first_name" => $user_first_name,
+            "user_last_name" => $user_last_name,
+            "user_email" => $user_email,
+            "user_phone" => $user_phone,
+            "source" => $source,
+            "currency" => $currency,
+            "amount" => $amount,
+        ]);
         $required_fields = ["amount"];
         $this->checkRequiredFields($required_fields, "Paypal");
 
