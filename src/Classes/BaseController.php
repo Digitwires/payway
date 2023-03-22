@@ -2,11 +2,12 @@
 
 namespace Digitwires\Payway\Classes;
 
+use Digitwires\Payway\Traits\SetRequiredFields;
 use Digitwires\Payway\Traits\SetVariables;
 
 class BaseController
 {
-    use SetVariables;
+    use SetVariables, SetRequiredFields;
 
     public function __construct()
     {
