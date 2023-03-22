@@ -10,7 +10,7 @@ class PaywayServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $this->configure();
 
-        $transPath = __DIR__ . "/../resources/lang";
+        $transPath = __DIR__ . "/../../resources/lang";
         $this->loadTranslationsFrom($transPath, "d-payway");
 
         $this->publishes(
@@ -24,7 +24,7 @@ class PaywayServiceProvider extends \Illuminate\Support\ServiceProvider
 
         $this->publishes(
             [
-                __DIR__ . "/../resources/lang" => $transPath,
+                __DIR__ . "/../../resources/lang" => $transPath,
             ],
             "digitwires-payway-lang"
         );
