@@ -15,7 +15,7 @@ class PaywayServiceProvider extends \Illuminate\Support\ServiceProvider
 
         $this->publishes(
             [
-                __DIR__ . "/../config/d-payway.php" => config_path(
+                __DIR__ . "/../../config/d-payway.php" => config_path(
                     "d-payway.php"
                 ),
             ],
@@ -41,7 +41,10 @@ class PaywayServiceProvider extends \Illuminate\Support\ServiceProvider
 
     protected function configure()
     {
-        $this->mergeConfigFrom(__DIR__ . "/../config/d-payway.php", "d-payway");
+        $this->mergeConfigFrom(
+            __DIR__ . "/../../config/d-payway.php",
+            "d-payway"
+        );
     }
 
     protected function registerTranslations($transPath)
