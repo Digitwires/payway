@@ -23,12 +23,12 @@ class PaypalGateway extends BaseController implements PaywayInterface
 
     public function init()
     {
-        $this->client_id = config("d-payway.PAYPAL_CLIENT_ID");
-        $this->client_secret = config("d-payway.PAYPAL_CLIENT_SECRET");
-        $this->mode = config("d-payway.PAYPAL_MODE");
-        $this->currency = config("d-payway.PAYPAL_CURRENCY");
-        $this->verify_url = config("d-payway.PAYPAL_VERIFY_URL");
-        $this->cancel_url = config("d-payway.PAYPAL_CANCEL_URL");
+        $this->client_id = config("payway.PAYPAL_CLIENT_ID");
+        $this->client_secret = config("payway.PAYPAL_CLIENT_SECRET");
+        $this->mode = config("payway.PAYPAL_MODE");
+        $this->currency = config("payway.PAYPAL_CURRENCY");
+        $this->verify_url = config("payway.PAYPAL_VERIFY_URL");
+        $this->cancel_url = config("payway.PAYPAL_CANCEL_URL");
     }
 
     public function pay(
