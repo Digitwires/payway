@@ -1,32 +1,43 @@
 {
-    "name": "digitwires/payments",
-    "description": "Payment Helper of Payment Gateways",
-    "type": "library",
-    "license": "MIT",
-    "keywords": [
-        "payment",
-        "gateway",
-        "payments",
-        "gateways",
-        "paymob",
-        "payfort",
-        "paytabs",
-        "paypal"
-    ],
-    "autoload": {
-        "psr-4": {
-            "Digitwires\\Payments\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Ahmed Mohamed Ibrahim",
-            "email": "ahmed_noreldin@outlook.com"
-        }
-    ],
-    "require": {
-        "php": "^8.1",
-        "laravel/framework": "10.*",
-        "guzzlehttp/guzzle": "^7.5.0"
+  "name": "digitwires/payments",
+  "description": "Payment Helper of Payment Gateways",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "payment",
+    "gateway",
+    "payments",
+    "gateways",
+    "paymob",
+    "payfort",
+    "paytabs",
+    "paypal"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Digitwires\\Payments\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Ahmed Mohamed Ibrahim",
+      "email": "ahmed_noreldin@outlook.com"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "laravel/framework": "10.*",
+    "guzzlehttp/guzzle": "^7.5.0",
+    "ext-http": "*"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Digitwires\\Payments\\Providers\\PaymentServiceProvider"
+      ],
+      "aliases": {
+        "DigitwiresPayments": "Digitwires\\Payments\\Facades"
+      }
+    }
+  }
 }
