@@ -25,12 +25,26 @@ This is the contents of the published lang file:
 php artisan vendor:publish --tag="payway-lang"
 ```
 
-## Supported Payment Providers
+## List of contents
+
+* [Available Providers](#list-of-available-providers)
+* [Usage](#usage)
+    * [Pay Invoices](#pay-invoices)
+    * [Verify Payments](#verify-payments)
+* [Change log](#change-log)
+* [Contributing](#contributing)
+* [Security Vulnerabilities](#security-vulnerabilities)
+* [Credits](#credits)
+* [License](#license)
+
+## List of available providers
 
 * [PayPal](#paypal-environment-variables)
 * [PayTabs](#paytabs-environment-variables)
 
 ## Usage
+
+### Pay Invoices
 
 The following example shows how to use the package with any payment provider.
 
@@ -60,6 +74,17 @@ $payment->setAmount(100)
         ->pay();
 ```
 
+### Verify Payments
+
+The following example shows how to verify payments with any payment provider.
+
+```php
+$payway = new PaypalGateway(); // OR any available payment class
+
+$payway->verifyPayment($request)
+
+```
+
 ## Available Providers
 
 ```php
@@ -86,3 +111,25 @@ PAYTABS_CHECKOUT_LANG=
 PAYTABS_VERIFY_URL=
 PAYTABS_CANCEL_URL=
 ```
+
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within this package, please
+email [ahmed_noreldin@outlook.com](mailto:ahmed_noreldin@outlook.com)
+
+## Credits
+
+- [Ahmed M. Ibrahim](https://github.com/2hmad)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
