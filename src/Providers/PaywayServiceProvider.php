@@ -10,23 +10,27 @@ class PaywayServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $this->configure();
 
-        $transPath = __DIR__ . "/../../resources/lang";
-        $this->loadTranslationsFrom($transPath, "d-payway");
+        $transPath = "vendor/payway";
+        $transPath = function_exists("resource_path")
+            ? lang_path($transPath)
+            : resource_path("lang/") . $transPath;
+
+        $this->loadTranslationsFrom($transPath, "payway");
 
         $this->publishes(
             [
-                __DIR__ . "/../../config/d-payway.php" => config_path(
-                    "d-payway.php"
+                __DIR__ . "/../../config/payway.php" => config_path(
+                    "payway.php"
                 ),
             ],
-            "digitwires-payway-config"
+            "payway-config"
         );
 
         $this->publishes(
             [
                 __DIR__ . "/../../resources/lang" => $transPath,
             ],
-            "digitwires-payway-lang"
+            "payway-lang"
         );
 
         $this->registerTranslations($transPath);
@@ -41,14 +45,11 @@ class PaywayServiceProvider extends \Illuminate\Support\ServiceProvider
 
     protected function configure()
     {
-        $this->mergeConfigFrom(
-            __DIR__ . "/../../config/d-payway.php",
-            "d-payway"
-        );
+        $this->mergeConfigFrom(__DIR__ . "/../../config/payway.php", "payway");
     }
 
     protected function registerTranslations($transPath)
     {
-        $this->loadTranslationsFrom($transPath, "d-payway");
+        $this->loadTranslationsFrom($transPath, "payway");
     }
 }
