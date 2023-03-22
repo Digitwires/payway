@@ -1,5 +1,5 @@
 {
-  "name": "digitwires/payments",
+  "name": "digitwires/payway",
   "description": "Payment Helper of Payment Gateways",
   "type": "library",
   "license": "MIT",
@@ -15,7 +15,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Digitwires\\Payments\\": "src/"
+      "Digitwires\\Payway\\": "src/"
     }
   },
   "authors": [
@@ -33,10 +33,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Digitwires\\Payments\\Providers\\PaymentServiceProvider"
+        "Digitwires\\Payway\\Providers\\PaywayServiceProvider"
       ],
       "aliases": {
-        "DigitwiresPayments": "Digitwires\\Payments\\Facades"
+        "DigitwiresPayway": "Digitwires\\Payway\\Facades"
       }
     }
   }

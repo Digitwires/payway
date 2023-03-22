@@ -1,10 +1,10 @@
 <?php
 
-namespace Digitwires\Payments\Interfaces;
+namespace Digitwires\Payway\Interfaces;
 
 use http\Client\Request;
 
-interface PaymentInterface
+interface PaywayInterface
 {
     public function pay(
         $amount,

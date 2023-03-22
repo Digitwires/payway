@@ -1,32 +1,32 @@
 <?php
 
-namespace Digitwires\Payments\Providers;
+namespace Digitwires\Payway\Providers;
 
-use Digitwires\Payments\Classes\PaypalGateway;
+use Digitwires\Payway\Classes\PaypalGateway;
 
-class PaymentServiceProvider extends \Illuminate\Support\ServiceProvider
+class PaywayServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function boot()
     {
         $this->configure();
 
         $transPath = __DIR__ . "/../resources/lang";
-        $this->loadTranslationsFrom($transPath, "d-payments");
+        $this->loadTranslationsFrom($transPath, "d-payway");
 
         $this->publishes(
             [
-                __DIR__ . "/../config/d-payments.php" => config_path(
-                    "d-payments.php"
+                __DIR__ . "/../config/d-payway.php" => config_path(
+                    "d-payway.php"
                 ),
             ],
-            "digitwires-payments-config"
+            "digitwires-payway-config"
         );
 
         $this->publishes(
             [
                 __DIR__ . "/../resources/lang" => $transPath,
             ],
-            "digitwires-payments-lang"
+            "digitwires-payway-lang"
         );
 
         $this->registerTranslations($transPath);
@@ -41,14 +41,11 @@ class PaymentServiceProvider extends \Illuminate\Support\ServiceProvider
 
     protected function configure()
     {
-        $this->mergeConfigFrom(
-            __DIR__ . "/../config/d-payments.php",
-            "d-payments"
-        );
+        $this->mergeConfigFrom(__DIR__ . "/../config/d-payway.php", "d-payway");
     }
 
     protected function registerTranslations($transPath)
     {
-        $this->loadTranslationsFrom($transPath, "d-payments");
+        $this->loadTranslationsFrom($transPath, "d-payway");
     }
 }

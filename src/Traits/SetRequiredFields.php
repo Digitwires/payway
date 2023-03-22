@@ -1,8 +1,8 @@
 <?php
 
-namespace Digitwires\Payments\Traits;
+namespace Digitwires\Payway\Traits;
 
-use Digitwires\Payments\Exceptions\MissingInfoException;
+use Digitwires\Payway\Exceptions\MissingInfoException;
 
 trait SetRequiredFields
 {

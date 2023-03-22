@@ -1,12 +1,12 @@
 <?php
 
-namespace Digitwires\Payments\Classes;
+namespace Digitwires\Payway\Classes;
 
-use Digitwires\Payments\Interfaces\PaymentInterface;
+use Digitwires\Payway\Interfaces\PaywayInterface;
 use GuzzleHttp\Client;
 use http\Client\Request;
 
-class PaypalGateway extends BaseController implements PaymentInterface
+class PaypalGateway extends BaseController implements PaywayInterface
 {
     private $client_id;
     private $client_secret;
@@ -23,12 +23,12 @@ class PaypalGateway extends BaseController implements PaymentInterface
 
     public function init()
     {
-        $this->client_id = config("d-payments.PAYPAL_CLIENT_ID");
-        $this->client_secret = config("d-payments.PAYPAL_CLIENT_SECRET");
-        $this->mode = config("d-payments.PAYPAL_MODE");
-        $this->currency = config("d-payments.PAYPAL_CURRENCY");
-        $this->verify_url = config("d-payments.PAYPAL_VERIFY_URL");
-        $this->cancel_url = config("d-payments.PAYPAL_CANCEL_URL");
+        $this->client_id = config("d-payway.PAYPAL_CLIENT_ID");
+        $this->client_secret = config("d-payway.PAYPAL_CLIENT_SECRET");
+        $this->mode = config("d-payway.PAYPAL_MODE");
+        $this->currency = config("d-payway.PAYPAL_CURRENCY");
+        $this->verify_url = config("d-payway.PAYPAL_VERIFY_URL");
+        $this->cancel_url = config("d-payway.PAYPAL_CANCEL_URL");
     }
 
     public function pay(

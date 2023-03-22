@@ -1,6 +1,6 @@
 <?php
 
-namespace Digitwires\Payments\Traits;
+namespace Digitwires\Payway\Traits;
 
 trait SetVariables
 {

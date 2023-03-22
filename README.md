@@ -1,3 +1,3 @@
-# Payments Package (In Development)
+# Payway Package (In Development)
 
 Payment Helper of Payment Gateways

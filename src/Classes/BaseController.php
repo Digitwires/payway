@@ -1,8 +1,8 @@
 <?php
 
-namespace Digitwires\Payments\Classes;
+namespace Digitwires\Payway\Classes;
 
-use Digitwires\Payments\Traits\SetVariables;
+use Digitwires\Payway\Traits\SetVariables;
 
 class BaseController
 {

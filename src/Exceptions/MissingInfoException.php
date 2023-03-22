@@ -1,6 +1,6 @@
 <?php
 
-namespace Digitwires\Payments\Exceptions;
+namespace Digitwires\Payway\Exceptions;
 
 class MissingInfoException extends \Exception
 {
