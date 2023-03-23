@@ -88,8 +88,8 @@ $payway->verifyPayment($request)
 ## Available Providers
 
 ```php
-use Nafezly\Payments\Classes\PaypalGateway;
-use Nafezly\Payments\Classes\PaytabsGateway;
+use Digitwires\Payway\Classes\PaypalGateway;
+use Digitwires\Payway\Classes\PaytabsGateway;
 ```
 
 ### PayPal Environment Variables
