@@ -130,7 +130,7 @@ class PaymobGateway extends BaseController implements PaywayInterface
             );
 
             return [
-                "payment_id" => json_decode($registerOrder->getBody())->id,
+                "transaction_id" => json_decode($registerOrder->getBody())->id,
                 "payment_key" => json_decode($paymentKey->getBody())->token,
                 "payment_url" =>
                     "https://accept.paymobsolutions.com/api/acceptance/iframes/$this->paymob_iframe_id?payment_token=" .
