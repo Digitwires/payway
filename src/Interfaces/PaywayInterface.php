@@ -6,7 +6,7 @@ use http\Client\Request;
 
 interface PaywayInterface
 {
-    public function pay(
+    public function initPayment(
         $amount,
         $user_id = null,
         $user_first_name = null,

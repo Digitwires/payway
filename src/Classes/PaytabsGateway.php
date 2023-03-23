@@ -32,7 +32,7 @@ class PaytabsGateway extends BaseController implements PaywayInterface
         $this->cancel_url = config("payway.PAYTABS_CANCEL_URL");
     }
 
-    public function pay(
+    public function initPayment(
         $amount,
         $user_id = null,
         $user_first_name = null,
