@@ -39,8 +39,12 @@ php artisan vendor:publish --tag="payway-lang"
 
 ## List of available providers
 
-* [PayPal](#paypal-environment-variables)
-* [PayTabs](#paytabs-environment-variables)
+You can navigate to the [Payment Providers Docs](PAYMENTPROVIDERS.md) file to see their examples or click on the links
+below.
+
+* [PayPal](PAYMENTPROVIDERS.md#paypal-gateway-example)
+* [PayTabs](PAYMENTPROVIDERS.md#paytabs-gateway-example)
+* [Paymob](PAYMENTPROVIDERS.md#paymob-gateway-example)
 
 ## Usage
 
@@ -51,7 +55,7 @@ The following example shows how to use the package with any payment provider.
 ```php
 $payway = new PaypalGateway(); // OR any available payment class
 
-$payway->pay([
+$payway->initPayment([
     'amount' => 100,
     'user_id' => '111',
     'user_first_name' => 'John',
@@ -61,17 +65,6 @@ $payway->pay([
     'source' => 'website',
     'currency' => 'USD',
 ]);
-
-// OR
-$payment->setAmount(100)
-        ->setUserId("111")
-        ->setUserFirstName("John")
-        ->setUserLastName("Doe")
-        ->setUserEmail("john@example.com")
-        ->setUserPhone("+11234567890")
-        ->setSource("website")
-        ->setCurrency("USD")
-        ->pay();
 ```
 
 ### Verify Payments
@@ -79,37 +72,17 @@ $payment->setAmount(100)
 The following example shows how to verify payments with any payment provider.
 
 ```php
-$payway = new PaypalGateway(); // OR any available payment class
-
-$payway->verifyPayment($request)
-
+  $payway = new PaypalGateway(); // OR any available payment class
+  
+  $payway->verifyPayment($request)
 ```
 
-## Available Providers
+### Available Providers
 
 ```php
 use Digitwires\Payway\Classes\PaypalGateway;
 use Digitwires\Payway\Classes\PaytabsGateway;
-```
-
-### PayPal Environment Variables
-
-```
-PAYPAL_CLIENT_ID=
-PAYPAL_CLIENT_SECRET=
-PAYPAL_MODE=
-PAYPAL_CURRENCY=
-```
-
-### PayTabs Environment Variables
-
-```
-PAYTABS_PROFILE_ID=
-PAYTABS_SERVER_KEY=
-PAYTABS_BASE_URL=
-PAYTABS_CHECKOUT_LANG=
-PAYTABS_VERIFY_URL=
-PAYTABS_CANCEL_URL=
+use Digitwires\Payway\Classes\PaymobGateway;
 ```
 
 ## Change log
