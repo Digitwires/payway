@@ -2,6 +2,7 @@
 
 namespace Digitwires\Payway\Providers;
 
+use Digitwires\Payway\Classes\PaymobGateway;
 use Digitwires\Payway\Classes\PaypalGateway;
 use Digitwires\Payway\Classes\PaytabsGateway;
 
@@ -44,6 +45,9 @@ class PaywayServiceProvider extends \Illuminate\Support\ServiceProvider
         });
         $this->app->bind(PaytabsGateway::class, function ($app) {
             return new PaytabsGateway();
+        });
+        $this->app->bind(PaymobGateway::class, function ($app) {
+            return new PaymobGateway();
         });
     }
 
