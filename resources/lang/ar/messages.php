@@ -17,4 +17,6 @@ return [
         "حدث خطأ أثناء تنفيذ العملية",
     "Your_card_is_not_authorized_with_3D_secure" =>
         "لم يتم تأكيد رمز OTP بنجاح",
+    "refund_failed" => "حدث خطأ أثناء تنفيذ عملية الإسترجاع",
+    "payment_refunded" => "تم إسترجاع الدفعة بنجاح",
 ];

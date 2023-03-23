@@ -18,4 +18,6 @@ return [
         "An error occurred while executing the operation",
     "Your_card_is_not_authorized_with_3D_secure" =>
         "Your card is not authorized with 3D secure",
+    "refund_failed" => "An error occurred while executing refund operation",
+    "payment_refunded" => "The payment operation has been refunded",
 ];
